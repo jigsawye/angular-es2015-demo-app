@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb/base",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "no-var": 0,
+    "vars-on-top": 0,
+    "comma-dangle": 0
+  }
+}

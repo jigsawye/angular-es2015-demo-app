@@ -1,0 +1,36 @@
+<md-dialog class="user-dialog" aria-label="Edit User">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Edit User</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+    <div class="md-dialog-content">
+      <div layout="row">
+        <md-input-container class="md-block" flex>
+          <label>Name</label>
+          <input ng-model="edit.user.name">
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+          <label>Phone</label>
+          <input ng-model="edit.user.phone">
+        </md-input-container>
+      </div>
+      <md-input-container class="md-block">
+        <label>Address</label>
+        <input ng-model="edit.user.address">
+      </md-input-container>
+    </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="edit.cancel()">
+        Cancel
+      </md-button>
+      <md-button ng-click="edit.edit()" style="margin-right:20px;">
+        Edit
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

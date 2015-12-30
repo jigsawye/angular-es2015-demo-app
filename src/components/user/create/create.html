@@ -1,0 +1,36 @@
+<md-dialog class="user-dialog" aria-label="Create User">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Create User</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+    <div class="md-dialog-content">
+      <div layout="row">
+        <md-input-container class="md-block" flex>
+          <label>Name</label>
+          <input ng-model="create.user.name">
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+          <label>Phone</label>
+          <input ng-model="create.user.phone">
+        </md-input-container>
+      </div>
+      <md-input-container class="md-block">
+        <label>Address</label>
+        <input ng-model="create.user.address">
+      </md-input-container>
+    </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="create.cancel()">
+        Cancel
+      </md-button>
+      <md-button ng-click="create.create()" style="margin-right:20px;">
+        Create
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
