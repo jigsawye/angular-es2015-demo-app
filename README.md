@@ -33,8 +33,8 @@ Open another terminal and running below command:
 $ npm start
 ```
 
-Open http://localhost:3000 in your browser.
+Open `http://localhost:3000` in your browser.
 
 ## Referencies
-https://github.com/AngularClass/NG6-starter
-https://github.com/nihgwu/hexo-hey
+- https://github.com/AngularClass/NG6-starter
+- https://github.com/nihgwu/hexo-hey
