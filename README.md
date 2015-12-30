@@ -11,10 +11,10 @@
 
 ## Screenshots
 
-![](screenshot/01.png)
-![](screenshot/02.png)
-![](screenshot/03.png)
-![](screenshot/04.png)
+![](screenshots/01.png)
+![](screenshots/02.png)
+![](screenshots/03.png)
+![](screenshots/04.png)
 
 ## Usage
 
