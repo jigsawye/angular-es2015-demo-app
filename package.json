@@ -1,7 +1,7 @@
 {
   "name": "angular-demoapp",
   "version": "0.1.0",
-  "description": "An angular es6 demo application using angular, ui-router and material.",
+  "description": "An angular ES2015 demo application using angular, ui-router and material.",
   "main": "src/index.js",
   "scripts": {
     "start": "node server.js",

@@ -1,6 +1,6 @@
-# Angular ES6 DemoApp
+# Angular ES2015 DemoApp
 
-> An angular es6 demo application using angular, ui-router and material.
+> An angular ES2015 demo application using angular, ui-router and material.
 
 - Angular
 - AngularUI Router
