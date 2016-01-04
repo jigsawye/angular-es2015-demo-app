@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 
@@ -22,6 +23,11 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development')
       }
     }),
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3001,
+      proxy: 'http://localhost:3000/'
+    })
   ],
   resolve: {
     extensions: ['', '.js']

@@ -8,6 +8,7 @@
 - Webpack
 - Babel
 - ESLint
+- BrowserSync
 
 ### Screenshots
 
@@ -39,7 +40,7 @@ Open another terminal and running below command:
 $ npm start
 ```
 
-Open `http://localhost:3000` in your browser.
+`http://localhost:3001` will automatic open in your browser with browser-sync.
 
 #### Production
 
