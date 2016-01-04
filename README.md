@@ -9,18 +9,18 @@
 - Babel
 - ESLint
 
-## Screenshots
+### Screenshots
 
 ![](screenshots/01.png)
 ![](screenshots/02.png)
 ![](screenshots/03.png)
 ![](screenshots/04.png)
 
-## Requirement
+### Requirement
 
-Node >= 4.0.0
+`Node >= 4.0.0`
 
-## Usage
+### Usage
 
 Install dependencies:
 ```sh
@@ -32,6 +32,8 @@ Start the JSON API server:
 $ npm run api-server
 ```
 
+#### Development
+
 Open another terminal and running below command:
 ```sh
 $ npm start
@@ -39,12 +41,20 @@ $ npm start
 
 Open `http://localhost:3000` in your browser.
 
-## Build
+#### Production
 
+Build the bundle js:
 ```sh
 $ npm run build
 ```
 
-## Referencies
+Start the production server:
+```sh
+$ npm run prod
+```
+
+Open `http://localhost:3000` in your browser.
+
+### Referencies
 - https://github.com/AngularClass/NG6-starter
 - https://github.com/nihgwu/hexo-hey

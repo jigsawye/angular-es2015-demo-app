@@ -4,10 +4,11 @@
   "description": "An angular ES2015 demo application using angular, ui-router and material.",
   "scripts": {
     "clean": "rimraf dist",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "api-server": "json-server -p 4000 db.json",
-    "start": "node server.js",
+    "start": "node server.dev.js",
+    "prod": "node server.prod.js",
     "test": "karma start"
   },
   "keywords": [

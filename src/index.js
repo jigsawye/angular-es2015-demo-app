@@ -18,6 +18,6 @@ angular
     Utils.name,
   ])
   .constant('Config', {
-    API_URL: 'http://localhost:4000',
+    API_URL: `http://${window.location.hostname}:4000`,
   })
   .config(Config.uiRouter);
