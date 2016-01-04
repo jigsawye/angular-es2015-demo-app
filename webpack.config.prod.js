@@ -4,7 +4,6 @@ var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 
 module.exports = {
-  devtool: 'source-map',
   entry: './src',
   output: {
     path: path.join(__dirname, 'dist'),
