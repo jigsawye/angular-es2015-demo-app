@@ -6,6 +6,7 @@ var precss = require('precss');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
+    'eventsource-polyfill',
     'webpack-hot-middleware/client',
     './src'
   ],
