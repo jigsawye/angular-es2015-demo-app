@@ -2,32 +2,35 @@
   "name": "angular-demoapp",
   "version": "0.1.1",
   "description": "An angular ES2015 demo application using angular, ui-router and material.",
-  "main": "src/index.js",
   "scripts": {
-    "start": "node server.js",
+    "clean": "rimraf dist",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+    "build": "npm run clean && npm run build:webpack",
     "api-server": "json-server -p 4000 db.json",
-    "test": "karma start",
-    "build": "NODE_ENV=production webpack --config webpack.config.production.js"
+    "start": "node server.js",
+    "test": "karma start"
   },
   "keywords": [
     "angular",
+    "angularjs",
     "material",
     "webpack",
-    "es6"
+    "es2015",
+    "babel"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jigsawye/angular-es2015-demo-app"
+    "url": "https://github.com/jigsawye/angular-es2015-demo-app.git"
   },
-  "author": {
-    "name": "Evan Ye",
-    "email": "jigsawye@gmail.com",
-    "url": "github.com/jigsawye/angular-es2015-demo-app"
-  },
+  "author": "Evan Ye <jigsawye@gmail.com> (http://github.com/jigsawye)",
   "engines": {
     "node": ">=4.0.0"
   },
   "license": "MIT",
+    "bugs": {
+    "url": "https://github.com/jigsawye/angular-es2015-demo-app/issues"
+  },
+  "homepage": "https://github.com/jigsawye/angular-es2015-demo-app",
   "dependencies": {
     "angular": "^1.4.4",
     "angular-animate": "^1.4.8",
@@ -38,26 +41,30 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.3.15",
-    "autoprefixer": "^6.2.1",
-    "babel-core": "^5.8.25",
+    "autoprefixer": "^6.2.3",
+    "babel-core": "^6.3.26",
     "babel-eslint": "^4.1.3",
-    "babel-loader": "^5.3.2",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "chai": "^3.4.0",
-    "css-loader": "^0.19.0",
+    "css-loader": "^0.23.1",
+    "cross-env": "^1.0.7",
     "eslint": "^1.6.0",
     "eslint-config-airbnb": "^2.1.1",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
+    "rimraf": "^2.4.3",
     "fs-walk": "0.0.1",
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^3.1.0",
-    "json-server": "^0.8.4",
+    "json-server": "^0.8.5",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",
     "karma-mocha": "^0.2.0",
-    "karma-mocha-reporter": "^1.0.2",
+    "karma-mocha-reporter": "^1.1.5",
     "karma-sourcemap-loader": "^0.3.4",
     "karma-webpack": "^1.5.1",
     "mocha": "^2.3.0",
@@ -65,10 +72,10 @@
     "node-libs-browser": "^0.5.0",
     "path": "^0.12.7",
     "postcss-loader": "^0.8.0",
-    "precss": "^1.3.0",
+    "precss": "^1.4.0",
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.0",
-    "style-loader": "^0.12.2",
+    "style-loader": "^0.13.0",
     "webpack": "^1.9.5",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.4.1",
