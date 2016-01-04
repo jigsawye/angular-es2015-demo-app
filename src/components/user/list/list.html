@@ -1,7 +1,7 @@
 <h3 class="md-headline">User list</h3>
 <md-button class="md-raised md-primary" ng-click="list.create($event)">Create</md-button>
 <md-list>
-  <md-list-item class="md-3-line" ng-repeat="user in list.users" ng-click="list.show($event)">
+  <md-list-item class="md-3-line" ng-repeat="user in list.users">
     <div class="md-list-item-text" layout="column">
       <h3 >{{ user.name }}</h3>
       <h4>Phone: {{ user.phone }}</h4>
