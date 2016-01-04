@@ -16,6 +16,10 @@
 ![](screenshots/03.png)
 ![](screenshots/04.png)
 
+## Requirement
+
+Node >= 4.0.0
+
 ## Usage
 
 Install dependencies:
