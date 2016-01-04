@@ -39,6 +39,12 @@ $ npm start
 
 Open `http://localhost:3000` in your browser.
 
+## Build
+
+```sh
+$ npm run build
+```
+
 ## Referencies
 - https://github.com/AngularClass/NG6-starter
 - https://github.com/nihgwu/hexo-hey

@@ -24,6 +24,9 @@
     "email": "jigsawye@gmail.com",
     "url": "github.com/jigsawye/angular-es2015-demo-app"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "license": "MIT",
   "dependencies": {
     "angular": "^1.4.4",
