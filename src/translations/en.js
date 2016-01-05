@@ -5,6 +5,11 @@ const en = {
     USER: 'User',
     ABOUT: 'About',
   },
+  TOAST: {
+    CREATE_SUCCESS: 'Create Success!',
+    EDIT_SUCCESS: 'Edit Success!',
+    DELETE_SUCCESS: 'Delete Success!',
+  },
   HOME: {
     TITLE: 'Home page.',
   },

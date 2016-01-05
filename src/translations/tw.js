@@ -5,6 +5,11 @@ const tw = {
     USER: '使用者',
     ABOUT: '關於',
   },
+  TOAST: {
+    CREATE_SUCCESS: '建立成功！',
+    EDIT_SUCCESS: '編輯成功！',
+    DELETE_SUCCESS: '刪除成功！',
+  },
   HOME: {
     TITLE: '首頁。',
   },

@@ -14,9 +14,12 @@ class EditController {
 
   edit() {
     this.UserService.updateUser(this.user).then(() => {
-      this.$state.reload();
-      this.$mdDialog.cancel();
-      this.ToastService.show('Edit Success!');
+      this.$translate('TOAST.EDIT_SUCCESS')
+        .then(successMessage => {
+          this.$state.reload();
+          this.$mdDialog.cancel();
+          this.ToastService.show(successMessage);
+        });
     });
   }
 }

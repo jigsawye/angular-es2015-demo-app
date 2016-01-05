@@ -38,7 +38,7 @@ class UserListController {
   }
 
   delete($event, user) {
-    this.$translate(['USER.CONFIRM_DELETE', 'USER.USER_NAME', 'USER.YES', 'USER.NO'])
+    this.$translate(['USER.CONFIRM_DELETE', 'USER.USER_NAME', 'USER.YES', 'USER.NO', 'TOAST.DELETE_SUCCESS'])
       .then(translations => {
         this.$mdDialog.show(this.$mdDialog.confirm()
           .title(translations['USER.CONFIRM_DELETE'])
@@ -51,7 +51,7 @@ class UserListController {
           this.UserService.deleteUser(user.id)
             .then(() => {
               this.$state.reload();
-              this.ToastService.show('Delete Success!');
+              this.ToastService.show(translations['TOAST.DELETE_SUCCESS']);
             });
         });
       });
