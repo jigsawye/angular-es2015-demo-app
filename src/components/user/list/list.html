@@ -1,25 +1,29 @@
 
-<h3 class="md-headline">User</h3>
+<h3 class="md-headline">{{ 'HEADER.USER' | translate }}</h3>
 <div ng-cloak>
   <md-content>
     <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="list">
+      <md-tab label="{{ 'USER.LIST' | translate }}">
         <md-content class="md-padding">
-          <md-button class="md-raised md-primary" ng-click="list.create($event)">Create</md-button>
+          <md-button class="md-raised md-primary"
+            ng-click="list.create($event)"
+          >
+            {{ 'USER.CREATE' | translate }}
+          </md-button>
           <md-list>
             <md-list-item class="md-3-line" ng-repeat="user in list.users">
               <div class="md-list-item-text" layout="column">
                 <h3 >{{ user.name }}</h3>
-                <h4>Phone: {{ user.phone }}</h4>
-                <p>Address: {{ user.address }}</p>
+                <h4>{{ 'USER.PHONE' | translate }}: {{ user.phone }}</h4>
+                <p>{{ 'USER.ADDRESS' | translate }}: {{ user.address }}</p>
               </div>
-              <md-button ng-click="list.edit($event, user.id)">Edit</md-button>
-              <md-button class="md-warn" ng-click="list.delete($event, user)">Remove</md-button>
+              <md-button ng-click="list.edit($event, user.id)">{{ 'USER.EDIT' | translate }}</md-button>
+              <md-button class="md-warn" ng-click="list.delete($event, user)">{{ 'USER.REMOVE' | translate }}</md-button>
             </md-list-item>
             </md-list>
         </md-content>
       </md-tab>
-      <md-tab label="info">
+      <md-tab label="{{ 'USER.INFO' | translate }}">
         <md-content class="md-padding">
           <h4 class="md-title">Module</h4>
           <pre>src/components/user/list.js</pre>

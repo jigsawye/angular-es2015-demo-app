@@ -4,9 +4,10 @@ import UserCreateTemplate from '../create/create.html';
 
 class UserListController {
   /** @ngInject */
-  constructor($mdDialog, $state, UserService, ToastService) {
+  constructor($mdDialog, $state, $rootScope, $translate, UserService, ToastService) {
     this.$mdDialog = $mdDialog;
     this.$state = $state;
+    this.$translate = $translate;
     this.UserService = UserService;
     this.ToastService = ToastService;
     UserService.getUsers().then(users => this.users = users);
@@ -38,20 +39,23 @@ class UserListController {
   }
 
   delete($event, user) {
-    this.$mdDialog.show(this.$mdDialog.confirm()
-      .title('Would you like to delete the user?')
-      .textContent(`User name: ${user.name}`)
-      .ariaLabel('confirm remove user')
-      .targetEvent($event)
-      .ok('Yes')
-      .cancel('No')
-    ).then(() => {
-      this.UserService.deleteUser(user.id)
-        .then(() => {
-          this.$state.reload();
-          this.ToastService.show('Delete Success!');
+    this.$translate(['USER.CONFIRM_DELETE', 'USER.USER_NAME', 'USER.YES', 'USER.NO'])
+      .then(translations => {
+        this.$mdDialog.show(this.$mdDialog.confirm()
+          .title(translations['USER.CONFIRM_DELETE'])
+          .textContent(`${translations['USER.USER_NAME']}: ${user.name}`)
+          .ariaLabel('confirm remove user')
+          .targetEvent($event)
+          .ok(translations['USER.YES'])
+          .cancel(translations['USER.NO'])
+        ).then(() => {
+          this.UserService.deleteUser(user.id)
+            .then(() => {
+              this.$state.reload();
+              this.ToastService.show('Delete Success!');
+            });
         });
-    });
+      });
   }
 }
 

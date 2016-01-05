@@ -2,30 +2,30 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Create User</h2>
+        <h2>{{ 'USER.CREATE_USER' | translate }}</h2>
       </div>
     </md-toolbar>
     <md-dialog-content class="dialog-content">
       <md-tabs md-dynamic-height md-border-bottom>
-        <md-tab label="create">
+        <md-tab label="{{ 'USER.CREATE' | translate }}">
           <md-content class="md-padding">
             <div layout="row">
               <md-input-container class="md-block" flex>
-                <label>Name</label>
+                <label>{{ 'USER.NAME' | translate }}</label>
                 <input ng-model="create.user.name">
               </md-input-container>
               <md-input-container class="md-block" flex>
-                <label>Phone</label>
+                <label>{{ 'USER.PHONE' | translate }}</label>
                 <input ng-model="create.user.phone">
               </md-input-container>
             </div>
             <md-input-container class="md-block">
-              <label>Address</label>
+              <label>{{ 'USER.ADDRESS' | translate }}</label>
               <input ng-model="create.user.address">
             </md-input-container>
           </md-content>
         </md-tab>
-        <md-tab label="info">
+        <md-tab label="{{ 'USER.INFO' | translate }}">
           <md-content class="md-padding">
             <h4 class="md-title">Module</h4>
             <pre>src/components/user/create.js</pre>
@@ -40,10 +40,10 @@
     <md-dialog-actions layout="row">
       <span flex></span>
       <md-button ng-click="create.cancel()">
-        Cancel
+        {{ 'USER.CANCEL' | translate }}
       </md-button>
       <md-button ng-click="create.create()" style="margin-right:20px;">
-        Create
+        {{ 'USER.CREATE' | translate }}
       </md-button>
     </md-dialog-actions>
   </form>

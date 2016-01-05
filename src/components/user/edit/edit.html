@@ -2,30 +2,30 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Edit User</h2>
+        <h2>{{ 'USER.EDIT_USER' | translate }}</h2>
       </div>
     </md-toolbar>
     <md-dialog-content class="dialog-content">
       <md-tabs md-dynamic-height md-border-bottom>
-        <md-tab label="edit">
+        <md-tab label="{{ 'USER.EDIT' | translate }}">
           <md-content class="md-padding">
             <div layout="row">
               <md-input-container class="md-block" flex>
-                <label>Name</label>
+                <label>{{ 'USER.NAME' | translate }}</label>
                 <input ng-model="edit.user.name">
               </md-input-container>
               <md-input-container class="md-block" flex>
-                <label>Phone</label>
+                <label>{{ 'USER.PHONE' | translate }}</label>
                 <input ng-model="edit.user.phone">
               </md-input-container>
             </div>
             <md-input-container class="md-block">
-              <label>Address</label>
+              <label>{{ 'USER.ADDRESS' | translate }}</label>
               <input ng-model="edit.user.address">
             </md-input-container>
           </md-content>
         </md-tab>
-        <md-tab label="info">
+        <md-tab label="{{ 'USER.INFO' | translate }}">
           <md-content class="md-padding">
             <h4 class="md-title">Module</h4>
             <pre>src/components/user/edit.js</pre>
@@ -40,10 +40,10 @@
     <md-dialog-actions layout="row">
       <span flex></span>
       <md-button ng-click="edit.cancel()">
-        Cancel
+        {{ 'USER.CANCEL' | translate }}
       </md-button>
       <md-button ng-click="edit.edit()" style="margin-right:20px;">
-        Edit
+        {{ 'USER.EDIT' | translate }}
       </md-button>
     </md-dialog-actions>
   </form>
