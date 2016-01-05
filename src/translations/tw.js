@@ -10,8 +10,8 @@ const tw = {
   },
   USER: {
     NAME: '姓名',
-    PHONE: '手機：',
-    ADDRESS: '地址：',
+    PHONE: '手機',
+    ADDRESS: '地址',
     LIST: '列表',
     CREATE: '建立',
     CREATE_USER: '建立使用者',
