@@ -5,23 +5,37 @@
         <h2>Edit User</h2>
       </div>
     </md-toolbar>
-    <md-dialog-content>
-    <div class="md-dialog-content">
-      <div layout="row">
-        <md-input-container class="md-block" flex>
-          <label>Name</label>
-          <input ng-model="edit.user.name">
-        </md-input-container>
-        <md-input-container class="md-block" flex>
-          <label>Phone</label>
-          <input ng-model="edit.user.phone">
-        </md-input-container>
-      </div>
-      <md-input-container class="md-block">
-        <label>Address</label>
-        <input ng-model="edit.user.address">
-      </md-input-container>
-    </div>
+    <md-dialog-content class="dialog-content">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="edit">
+          <md-content class="md-padding">
+            <div layout="row">
+              <md-input-container class="md-block" flex>
+                <label>Name</label>
+                <input ng-model="edit.user.name">
+              </md-input-container>
+              <md-input-container class="md-block" flex>
+                <label>Phone</label>
+                <input ng-model="edit.user.phone">
+              </md-input-container>
+            </div>
+            <md-input-container class="md-block">
+              <label>Address</label>
+              <input ng-model="edit.user.address">
+            </md-input-container>
+          </md-content>
+        </md-tab>
+        <md-tab label="info">
+          <md-content class="md-padding">
+            <h4 class="md-title">Module</h4>
+            <pre>src/components/user/edit.js</pre>
+            <h4 class="md-title">Controller</h4>
+            <pre>src/components/user/edit.controller.js</pre>
+            <h4 class="md-title">View</h4>
+            <pre>src/components/user/edit.html</pre>
+            </md-content>
+        </md-tab>
+      </md-tabs>
     </md-dialog-content>
     <md-dialog-actions layout="row">
       <span flex></span>

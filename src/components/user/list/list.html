@@ -1,14 +1,34 @@
-<h3 class="md-headline">User list</h3>
-<md-button class="md-raised md-primary" ng-click="list.create($event)">Create</md-button>
-<md-list>
-  <md-list-item class="md-3-line" ng-repeat="user in list.users">
-    <div class="md-list-item-text" layout="column">
-      <h3 >{{ user.name }}</h3>
-      <h4>Phone: {{ user.phone }}</h4>
-      <p>Address: {{ user.address }}</p>
-    </div>
-    <md-button ng-click="list.edit($event, user.id)">Edit</md-button>
-    <md-button class="md-warn" ng-click="list.delete($event, user)">Remove</md-button>
-  </md-list-item>
-</md-list>
 
+<h3 class="md-headline">User</h3>
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="list">
+        <md-content class="md-padding">
+          <md-button class="md-raised md-primary" ng-click="list.create($event)">Create</md-button>
+          <md-list>
+            <md-list-item class="md-3-line" ng-repeat="user in list.users">
+              <div class="md-list-item-text" layout="column">
+                <h3 >{{ user.name }}</h3>
+                <h4>Phone: {{ user.phone }}</h4>
+                <p>Address: {{ user.address }}</p>
+              </div>
+              <md-button ng-click="list.edit($event, user.id)">Edit</md-button>
+              <md-button class="md-warn" ng-click="list.delete($event, user)">Remove</md-button>
+            </md-list-item>
+            </md-list>
+        </md-content>
+      </md-tab>
+      <md-tab label="info">
+        <md-content class="md-padding">
+          <h4 class="md-title">Module</h4>
+          <pre>src/components/user/list.js</pre>
+          <h4 class="md-title">Controller</h4>
+          <pre>src/components/user/list.controller.js</pre>
+          <h4 class="md-title">View</h4>
+          <pre>src/components/user/list.html</pre>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
