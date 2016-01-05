@@ -1,10 +1,9 @@
 class CreateController {
   /** @ngInject */
   constructor($mdDialog, $state, UserService, ToastService) {
-    this.$mdDialog = $mdDialog;
-    this.$state = $state;
-    this.UserService = UserService;
-    this.ToastService = ToastService;
+    Object.assign(this, {
+      $mdDialog, $state, UserService, ToastService
+    });
   }
 
   cancel() {

@@ -4,12 +4,11 @@ import UserCreateTemplate from '../create/create.html';
 
 class UserListController {
   /** @ngInject */
-  constructor($mdDialog, $state, $rootScope, $translate, UserService, ToastService) {
-    this.$mdDialog = $mdDialog;
-    this.$state = $state;
-    this.$translate = $translate;
-    this.UserService = UserService;
-    this.ToastService = ToastService;
+  constructor($mdDialog, $state, $translate, UserService, ToastService) {
+    Object.assign(this, {
+      $mdDialog, $state, $translate, UserService, ToastService
+    });
+
     UserService.getUsers().then(users => this.users = users);
   }
 

@@ -1,7 +1,10 @@
 class HeaderController {
   /** @ngInject */
   constructor($translate) {
-    this.$translate = $translate;
+    Object.assign(this, {
+      $translate
+    });
+
     this.languages = [
       { key: 'en', name: 'English' },
       { key: 'tw', name: '繁體中文' },
