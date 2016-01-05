@@ -1,7 +1,7 @@
 {
   "name": "angular-demoapp",
   "version": "0.1.1",
-  "description": "An angular ES2015 demo application using angular, ui-router and material.",
+  "description": "An Angular ES2015 demo application using Angular, AngularUI Router, Angular Translate and Angular Material",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",

@@ -1,9 +1,10 @@
 # Angular ES2015 DemoApp
 
-> An angular ES2015 demo application using angular, ui-router and material.
+> An Angular ES2015 demo application using Angular, AngularUI Router, Angular Translate and Angular Material.
 
 - Angular
 - AngularUI Router
+- Angular Translate
 - Angular Material
 - Webpack
 - Babel
