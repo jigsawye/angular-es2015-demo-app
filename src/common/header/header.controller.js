@@ -1,8 +1,16 @@
 class HeaderController {
-  constructor() {
-    this.title = 'DemoApp';
-    // this.languages = ['English', '中文'];
-    // this.selectedLanguage = 'English';
+  /** @ngInject */
+  constructor($translate) {
+    this.$translate = $translate;
+    this.languages = [
+      { key: 'en', name: 'English' },
+      { key: 'tw', name: '繁體中文' },
+    ];
+    this.selectedLanguage = 'en';
+  }
+
+  changeLanguage() {
+    this.$translate.use(this.selectedLanguage);
   }
 }
 

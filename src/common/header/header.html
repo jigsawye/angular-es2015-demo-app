@@ -1,20 +1,23 @@
 <md-toolbar class="md-whiteframe-2dp header-toolbar">
   <div class="md-toolbar-tools">
     <h2>
-      <span>{{ header.title }}</span>
+      <span>{{ 'HEADER.APPNAME' | translate }}</span>
     </h2>
     <span flex></span>
     <md-button class="md-primary header-button" ui-sref="home">
-        Home
+        {{ 'HEADER.HOME' | translate }}
     </md-button>
     <md-button class="md-primary header-button" ui-sref="user.list">
-        User
+        {{ 'HEADER.USER' | translate }}
     </md-button>
     <md-button class="md-primary header-button" ui-sref="about">
-        About
+        {{ 'HEADER.ABOUT' | translate }}
     </md-button>
-  <!--   <md-select ng-model="header.selectedLanguage" placeholder="Select a Language">
-       <md-option ng-value="opt" ng-repeat="opt in header.languages">{{ opt }}</md-option>
-    </md-select> -->
+    <md-select aria-label="language" class="md-body-1"
+      ng-model="header.selectedLanguage"
+      ng-change="header.changeLanguage()"
+    >
+       <md-option ng-value="language.key" ng-repeat="language in header.languages">{{ language.name }}</md-option>
+    </md-select>
   </div>
 </md-toolbar>

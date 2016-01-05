@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
+import translate from 'angular-translate';
 import 'angular-material/angular-material.css';
 
 import Common from './common/';
@@ -12,6 +13,7 @@ angular
   .module('app', [
     uiRouter,
     ngMaterial,
+    translate,
 
     Common.name,
     Components.name,
@@ -20,4 +22,5 @@ angular
   .constant('Config', {
     API_URL: `http://${window.location.hostname}:4000`,
   })
-  .config(Config.uiRouter);
+  .config(Config.uiRouter)
+  .config(Config.translate);
