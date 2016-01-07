@@ -6,8 +6,8 @@ module.exports = (config) => {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: [
-      // 'Chrome',
-      'PhantomJS'
+      'Chrome',
+      // 'PhantomJS'
     ],
 
     // web server port
@@ -46,7 +46,7 @@ module.exports = (config) => {
           },
           {
             test: /\.css$/,
-            loaders: ['style', 'css', 'postcss'],
+            loader: 'null',
           },
           {
             test: /\.html$/,
