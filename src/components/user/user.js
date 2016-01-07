@@ -9,6 +9,18 @@ import UserList from './list/list';
 import UserEdit from './edit/edit';
 import UserCreate from './create/create';
 
+/** @ngInject */
+const route = $stateProvider => {
+  $stateProvider.state('user', {
+    url: '/user',
+    parent: 'root',
+    abstract: true,
+    template: UserTemplate,
+    controller: 'UserController',
+    controllerAs: 'user'
+  });
+};
+
 const userModule = angular
   .module('user', [
     uiRouter,
@@ -18,18 +30,6 @@ const userModule = angular
   ])
   .controller('UserController', UserController)
   .service('UserService', UserService)
-  .config($stateProvider => {
-    'ngInject';
-
-    $stateProvider
-      .state('user', {
-        url: '/user',
-        parent: 'root',
-        abstract: true,
-        template: UserTemplate,
-        controller: 'UserController',
-        controllerAs: 'user'
-      });
-  });
+  .config(route);
 
 export default userModule;
