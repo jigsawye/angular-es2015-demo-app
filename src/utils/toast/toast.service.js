@@ -1,5 +1,3 @@
-import angular from 'angular';
-
 class ToastService {
   /** @ngInject */
   constructor($mdToast) {
@@ -22,8 +20,4 @@ class ToastService {
   }
 }
 
-const ToastModule = angular
-  .module('toast', [])
-  .service('ToastService', ToastService);
-
-export default ToastModule;
+export default ToastService;
