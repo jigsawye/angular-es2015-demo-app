@@ -1,9 +1,14 @@
+/* eslint-env mocha */
+/* eslint no-unused-vars:0 */
+/* global inject, expect */
+
 import <%= upCaseName %>Module from './<%= name %>'
 import <%= upCaseName %>Controller from './<%= name %>.controller';
 import <%= upCaseName %>Template from './<%= name %>.html';
 
 describe('<%= upCaseName %>', () => {
-  let $rootScope, makeController;
+  let $rootScope;
+  let makeController;
 
   beforeEach(window.module(<%= upCaseName %>Module.name));
   beforeEach(inject((_$rootScope_) => {
@@ -20,7 +25,7 @@ describe('<%= upCaseName %>', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
+      const controller = makeController();
       expect(controller).to.have.property('name');
     });
   });
@@ -31,22 +36,5 @@ describe('<%= upCaseName %>', () => {
     it('has name in template [REMOVE]', () => {
       expect(<%= upCaseName %>Template).to.match(/{{\s?vm\.name\s?}}/g);
     });
-  });
-
-  describe('Component', () => {
-      // component/directive specs
-      let component = <%= upCaseName %>Component;
-
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(<%= upCaseName %>Template);
-      });
-
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(<%= upCaseName %>Controller);
-      });
   });
 });

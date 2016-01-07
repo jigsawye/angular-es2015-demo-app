@@ -1,39 +1,68 @@
 module.exports = (config) => {
   config.set({
-    // base path used to resolve all patterns
-    basePath: '',
+    // toggle whether to watch files and rerun tests upon incurring changes
+    autoWatch: false,
+
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: [
+      // 'Chrome',
+      'PhantomJS'
+    ],
+
+    // web server port
+    port: 9876,
+
+    // enable colors in the output
+    colors: true,
+
+    // if true, Karma runs tests once and exits
+    singleRun: true,
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['mocha', 'chai'],
 
     // list of files/patterns to load in the browser
-    files: [{ pattern: 'spec.bundle.js', watched: false }],
-
-    // files to exclude
-    exclude: [],
-
-    plugins: [
-      require('karma-chai'),
-      require('karma-chrome-launcher'),
-      require('karma-mocha'),
-      require('karma-mocha-reporter'),
-      require('karma-sourcemap-loader'),
-      require('karma-webpack')
+    files: [
+      'karma.spec.js',
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'spec.bundle.js': ['webpack', 'sourcemap'] },
+    preprocessors: {
+      'karma.spec.js': ['webpack'],
+    },
 
     webpack: {
       devtool: 'inline-source-map',
       module: {
         loaders: [
-          { test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
-          { test: /\.html/, loader: 'raw' },
-          { test: /\.styl$/, loader: 'style!css!stylus' },
-          { test: /\.css$/, loader: 'style!css' }
+          {
+            // transpile all files except testing sources with babel as usual
+            test: /\.spec\.js$/,
+            loaders: ['babel'],
+            exclude: /node_modules/,
+          },
+          {
+            test: /\.css$/,
+            loaders: ['style', 'css', 'postcss'],
+          },
+          {
+            test: /\.html$/,
+            loader: 'raw',
+          },
+        ],
+        postLoaders: [
+          {
+            // transpile and instrument only testing sources with isparta
+            test: /\.js$/,
+            exclude: [
+              /node_modules/,
+              /\.spec\.js$/,
+            ],
+            loader: 'isparta',
+          }
         ]
       }
     },
@@ -43,26 +72,15 @@ module.exports = (config) => {
     },
 
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
 
-    // web server port
-    port: 9876,
-
-    // enable colors in the output
-    colors: true,
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-    // toggle whether to watch files and rerun tests upon incurring changes
-    autoWatch: false,
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
-
-    // if true, Karma runs tests once and exits
-    singleRun: true
+    // set coverage reporters
+    coverageReporter: {
+      reporters: [
+          { type: 'html', subdir: 'html' },
+          { type: 'lcovonly', subdir: 'lcov' },
+          { type: 'cobertura', subdir: 'cobertura' }
+      ]
+    },
   });
 };
