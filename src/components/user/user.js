@@ -1,5 +1,4 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 import UserController from './user.controller';
 import UserService from './user.service';
 import UserTemplate from './user.html';
@@ -23,7 +22,6 @@ const route = $stateProvider => {
 
 const userModule = angular
   .module('user', [
-    uiRouter,
     UserList.name,
     UserEdit.name,
     UserCreate.name,

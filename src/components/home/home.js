@@ -1,5 +1,4 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 import HomeController from './home.controller';
 import HomeTemplate from './home.html';
 
@@ -15,9 +14,7 @@ const route = $stateProvider => {
 };
 
 const homeModule = angular
-  .module('home', [
-    uiRouter
-  ])
+  .module('home', [])
   .controller('HomeController', HomeController)
   .config(route);
 

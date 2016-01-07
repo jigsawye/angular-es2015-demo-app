@@ -1,5 +1,4 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 import AboutController from './about.controller';
 import AboutTemplate from './about.html';
 
@@ -15,9 +14,7 @@ const route = $stateProvider => {
 };
 
 const aboutModule = angular
-  .module('about', [
-    uiRouter
-  ])
+  .module('about', [])
   .controller('AboutController', AboutController)
   .config(route);
 

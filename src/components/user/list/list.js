@@ -15,9 +15,7 @@ const route = $stateProvider => {
 };
 
 const UserListModule = angular
-  .module('list', [
-    uiRouter
-  ])
+  .module('list', [])
   .controller('UserListController', UserListController)
   .config(route);
 
