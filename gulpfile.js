@@ -6,7 +6,7 @@ var args = require('yargs').argv;
 gulp.task('make', () => {
   const name = args.name;
   const upCaseName = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
-  const destPath = `${__dirname}/src/${args.path}`;
+  const destPath = `${__dirname}/src/components/${args.path}`;
   const route = !! args.route;
 
   return gulp

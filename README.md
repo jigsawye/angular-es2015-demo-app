@@ -61,9 +61,24 @@ $ npm run prod
 $ gulp make --name={name} --path={path} [--route]
 ```
 
-- `name`: component name, e.g.: `show`.
-- `path`: component path, e.g.: `components/posts`.
+- `name`: component name.
+- `path`: component path.
 - `route`: if you set `--route` option that will stubing route config for your module.
+
+For example, if you execute `gulp make --name=create --path=posts --route`, it will generate following files and include route config:
+
+```
+src/
+└── components
+    └── posts
+        └── create
+            ├── create.controller.js
+            ├── create.css
+            ├── create.html
+            ├── create.js
+            └── create.spec.js
+```
+
 
 Open `http://localhost:3000` in your browser.
 
