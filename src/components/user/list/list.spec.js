@@ -1,9 +1,14 @@
-import ListModule from './list'
+/* eslint-env mocha */
+/* eslint no-unused-vars:0 */
+/* global inject, expect */
+
+import ListModule from './list';
 import ListController from './list.controller';
 import ListTemplate from './list.html';
 
 describe('List', () => {
-  let $rootScope, makeController;
+  let $rootScope;
+  let makeController;
 
   beforeEach(window.module(ListModule.name));
   beforeEach(inject((_$rootScope_) => {
@@ -20,7 +25,7 @@ describe('List', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
+      const controller = makeController();
       expect(controller).to.have.property('name');
     });
   });
@@ -31,22 +36,5 @@ describe('List', () => {
     it('has name in template [REMOVE]', () => {
       expect(ListTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
-  });
-
-  describe('Component', () => {
-      // component/directive specs
-      let component = ListComponent;
-
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(ListTemplate);
-      });
-
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(ListController);
-      });
   });
 });

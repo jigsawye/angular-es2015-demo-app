@@ -57,6 +57,14 @@ $ npm run prod
 
 Open `http://localhost:3000` in your browser.
 
+### Test
+
+```sh
+$ npm run clean && karma start
+```
+
+> The `npm test` has some bugs and I will fixed it later.
+
 ### Scaffold
 
 ```sh

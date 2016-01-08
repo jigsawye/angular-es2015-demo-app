@@ -1,9 +1,14 @@
-import EditModule from './edit'
+/* eslint-env mocha */
+/* eslint no-unused-vars:0 */
+/* global inject, expect */
+
+import EditModule from './edit';
 import EditController from './edit.controller';
 import EditTemplate from './edit.html';
 
 describe('Edit', () => {
-  let $rootScope, makeController;
+  let $rootScope;
+  let makeController;
 
   beforeEach(window.module(EditModule.name));
   beforeEach(inject((_$rootScope_) => {
@@ -20,7 +25,7 @@ describe('Edit', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
+      const controller = makeController();
       expect(controller).to.have.property('name');
     });
   });
@@ -31,22 +36,5 @@ describe('Edit', () => {
     it('has name in template [REMOVE]', () => {
       expect(EditTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
-  });
-
-  describe('Component', () => {
-      // component/directive specs
-      let component = EditComponent;
-
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(EditTemplate);
-      });
-
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(EditController);
-      });
   });
 });

@@ -1,10 +1,14 @@
+/* eslint-env mocha */
+/* eslint no-unused-vars:0 */
+/* global inject, expect */
+
 import AboutModule from './about';
 import AboutController from './about.controller';
-import AboutComponent from './about.component';
 import AboutTemplate from './about.html';
 
 describe('About', () => {
-  let $rootScope, makeController;
+  let $rootScope;
+  let makeController;
 
   beforeEach(window.module(AboutModule.name));
   beforeEach(inject((_$rootScope_) => {
@@ -21,7 +25,7 @@ describe('About', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
+      const controller = makeController();
       expect(controller).to.have.property('name');
     });
   });
@@ -32,22 +36,5 @@ describe('About', () => {
     it('has name in template [REMOVE]', () => {
       expect(AboutTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
-  });
-
-  describe('Component', () => {
-      // component/directive specs
-      let component = AboutComponent;
-
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(AboutTemplate);
-      });
-
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(AboutController);
-      });
   });
 });

@@ -1,10 +1,14 @@
+/* eslint-env mocha */
+/* eslint no-unused-vars:0 */
+/* global inject, expect */
+
 import HomeModule from './home';
 import HomeController from './home.controller';
-import HomeComponent from './home.component';
 import HomeTemplate from './home.html';
 
 describe('Home', () => {
-  let $rootScope, makeController;
+  let $rootScope;
+  let makeController;
 
   beforeEach(window.module(HomeModule.name));
   beforeEach(inject((_$rootScope_) => {
@@ -21,7 +25,7 @@ describe('Home', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
+      const controller = makeController();
       expect(controller).to.have.property('name');
     });
   });
@@ -32,22 +36,5 @@ describe('Home', () => {
     it('has name in template [REMOVE]', () => {
       expect(HomeTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
-  });
-
-  describe('Component', () => {
-      // component/directive specs
-      let component = HomeComponent;
-
-      it('includes the intended template',() => {
-        expect(component.template).to.equal(HomeTemplate);
-      });
-
-      it('uses `controllerAs` syntax', () => {
-        expect(component).to.have.property('controllerAs');
-      });
-
-      it('invokes the right controller', () => {
-        expect(component.controller).to.equal(HomeController);
-      });
   });
 });
