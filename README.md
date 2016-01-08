@@ -55,6 +55,16 @@ Start the production server:
 $ npm run prod
 ```
 
+### Scaffold
+
+```sh
+$ gulp make --name={name} --path={path} [--route]
+```
+
+- `name`: component name, e.g.: `show`.
+- `path`: component path, e.g.: `components/posts`.
+- `route`: if you set `--route` option that will stubing route config for your module.
+
 Open `http://localhost:3000` in your browser.
 
 ### Referencies
