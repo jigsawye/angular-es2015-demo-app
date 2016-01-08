@@ -55,6 +55,8 @@ Start the production server:
 $ npm run prod
 ```
 
+Open `http://localhost:3000` in your browser.
+
 ### Scaffold
 
 ```sh
@@ -78,9 +80,6 @@ src/
             ├── create.js
             └── create.spec.js
 ```
-
-
-Open `http://localhost:3000` in your browser.
 
 ### Referencies
 - https://github.com/AngularClass/NG6-starter
