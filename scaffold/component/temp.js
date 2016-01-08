@@ -1,4 +1,5 @@
 import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 import <%= upCaseName %>Controller from './<%= name %>.controller';<% if (route) { %>
 import <%= upCaseName %>Template from './<%= name %>.html';
 <% } %>
@@ -16,12 +17,16 @@ const route = $stateProvider => {
 };
 <% } if (route) { %>
 const <%= upCaseName %>Module = angular
-  .module('<%= name %>', [])
+  .module('<%= name %>', [
+    uiRouter,
+  ])
   .controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller)
   .config(route);
 <% } else { %>
 const <%= upCaseName %>Module = angular
-  .module('<%= name %>', [])
+  .module('<%= name %>', [
+    uiRouter,
+  ])
   .controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller);
 <% } %>
 export default <%= upCaseName %>Module;
