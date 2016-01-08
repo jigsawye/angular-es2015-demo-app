@@ -1,26 +1,23 @@
 var gulp = require('gulp');
-var path = require('path');
 var rename = require('gulp-rename');
 var template = require('gulp-template');
 var args = require('yargs').argv;
 
 gulp.task('make', () => {
-  const cap = val => {
-    return val.charAt(0).toUpperCase() + val.slice(1);
-  };
-
   const name = args.name;
-  const componentName = name.split('/').pop();
-  const destPath = path.join(`src/${args.common ? 'common' : 'components'}`, name);
+  const upCaseName = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
+  const destPath = `${__dirname}/src/components/${args.path}`;
+  const route = !! args.route;
 
   return gulp
-    .src(path.join(__dirname, 'scaffold', 'component/**/*.**'))
+    .src(`${__dirname}/scaffold/component/**/*.**`)
     .pipe(template({
-      upCaseName: cap(componentName),
-      name: componentName,
+      upCaseName,
+      name,
+      route,
     }))
     .pipe(rename(filePath => {
-      filePath.basename = filePath.basename.replace('temp', componentName);
+      filePath.basename = filePath.basename.replace('temp', name);
     }))
     .pipe(gulp.dest(destPath));
 });

@@ -65,6 +65,30 @@ $ npm run clean && karma start
 
 > The `npm test` has some bugs and I will fixed it later.
 
+### Scaffold
+
+```sh
+$ gulp make --name={name} --path={path} [--route]
+```
+
+- `name`: component name.
+- `path`: component path.
+- `route`: if you set `--route` option that will stubing route config for your module.
+
+For example, if you execute `gulp make --name=create --path=posts --route`, it will generate following files and include route config:
+
+```
+src/
+└── components
+    └── posts
+        └── create
+            ├── create.controller.js
+            ├── create.css
+            ├── create.html
+            ├── create.js
+            └── create.spec.js
+```
+
 ### Referencies
 - https://github.com/AngularClass/NG6-starter
 - https://github.com/nihgwu/hexo-hey
