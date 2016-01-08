@@ -29,8 +29,9 @@ Install dependencies:
 $ npm install
 ```
 
-Start the JSON API server:
+Rename `db.json.example` to `db.json` and start the JSON API server:
 ```sh
+$ mv db.json.example db.json
 $ npm run api-server
 ```
 

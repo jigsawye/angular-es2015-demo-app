@@ -3,6 +3,7 @@
 .git
 .settings
 *.log
+db.json
 /node_modules
 /dist
 /coverage
