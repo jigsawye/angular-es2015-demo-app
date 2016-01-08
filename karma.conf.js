@@ -77,9 +77,8 @@ module.exports = (config) => {
     // set coverage reporters
     coverageReporter: {
       reporters: [
-          { type: 'html', subdir: 'html' },
-          { type: 'lcovonly', subdir: 'lcov' },
-          { type: 'cobertura', subdir: 'cobertura' }
+        { type: 'text' },
+        { type: 'html', subdir: 'html' },
       ]
     },
   });
