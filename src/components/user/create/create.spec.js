@@ -1,32 +1,59 @@
 /* eslint-env mocha */
 /* eslint no-unused-vars:0 */
-/* global inject, expect */
+/* global inject, chai, sinon */
 
 import CreateModule from './create';
 import CreateController from './create.controller';
 import CreateTemplate from './create.html';
 
 describe('Create', () => {
-  let $rootScope;
+  const $mdDialog = {};
+  const $state = {};
+  const $translate = {};
+  const UserService = {};
+  const ToastService = {};
   let makeController;
+  let mockDependecies;
 
-  beforeEach(window.module(CreateModule.name));
-  beforeEach(inject((_$rootScope_) => {
-    $rootScope = _$rootScope_;
+  beforeEach(() => {
     makeController = () => {
-      return new CreateController();
+      return new CreateController($mdDialog, $state, $translate, UserService, ToastService);
     };
-  }));
+
+    mockDependecies = window.module($provide => {
+      $provide.factory('$mdDialog', () => {
+        return $mdDialog;
+      });
+      $provide.factory('$state', () => {
+        return $state;
+      });
+      $provide.factory('$translate', () => {
+        return $translate;
+      });
+      $provide.factory('UserService', () => {
+        return UserService;
+      });
+      $provide.factory('ToastService', () => {
+        return ToastService;
+      });
+    });
+  });
 
   describe('Module', () => {
     // top-level specs: i.e., routes, injection, naming
   });
 
   describe('Controller', () => {
-    // controller specs
-    it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
+    it('.cancel() - should call $mdDialog once.', () => {
+      $mdDialog.cancel = sinon.spy();
+      mockDependecies();
+
       const controller = makeController();
-      expect(controller).to.have.property('name');
+      controller.cancel();
+      chai.expect($mdDialog.cancel.called).to.eq(true);
+    });
+
+    it('.create() - should call dependecnies.', () => {
     });
   });
 
@@ -34,7 +61,7 @@ describe('Create', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(CreateTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      // expect(CreateTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
   });
 });

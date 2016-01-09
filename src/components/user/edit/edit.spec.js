@@ -25,8 +25,6 @@ describe('Edit', () => {
   describe('Controller', () => {
     // controller specs
     it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      const controller = makeController();
-      expect(controller).to.have.property('name');
     });
   });
 
@@ -34,7 +32,6 @@ describe('Edit', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(EditTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
   });
 });
