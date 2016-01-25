@@ -11,14 +11,15 @@ class CreateController {
   }
 
   create() {
-    this.UserService.createUser(this.user).then(() => {
-      this.$translate('TOAST.CREATE_SUCCESS')
-        .then(successMessage => {
-          this.$state.reload();
-          this.$mdDialog.cancel();
-          this.ToastService.show(successMessage);
-        });
-    });
+    this.UserService.createUser(this.user)
+      .then(() => {
+        return this.$translate('TOAST.CREATE_SUCCESS');
+      })
+      .then(successMessage => {
+        this.$state.reload();
+        this.$mdDialog.cancel();
+        this.ToastService.show(successMessage);
+      });
   }
 }
 

@@ -7,37 +7,29 @@ import CreateController from './create.controller';
 import CreateTemplate from './create.html';
 
 describe('Create', () => {
+  let $rootScope;
+  let makeDeferred;
+  let makeController;
+
   const $mdDialog = {};
   const $state = {};
-  const $translate = {};
+  let $translate = {};
   const UserService = {};
   const ToastService = {};
-  let makeController;
-  let mockDependecies;
 
-  beforeEach(() => {
+  beforeEach(window.module(CreateModule.name));
+
+  beforeEach(inject(($q, _$rootScope_) => {
+    $rootScope = _$rootScope_;
+
+    makeDeferred = () => {
+      return $q.defer();
+    };
+
     makeController = () => {
       return new CreateController($mdDialog, $state, $translate, UserService, ToastService);
     };
-
-    mockDependecies = window.module($provide => {
-      $provide.factory('$mdDialog', () => {
-        return $mdDialog;
-      });
-      $provide.factory('$state', () => {
-        return $state;
-      });
-      $provide.factory('$translate', () => {
-        return $translate;
-      });
-      $provide.factory('UserService', () => {
-        return UserService;
-      });
-      $provide.factory('ToastService', () => {
-        return ToastService;
-      });
-    });
-  });
+  }));
 
   describe('Module', () => {
     // top-level specs: i.e., routes, injection, naming
@@ -46,7 +38,6 @@ describe('Create', () => {
   describe('Controller', () => {
     it('.cancel() - should call $mdDialog once.', () => {
       $mdDialog.cancel = sinon.spy();
-      mockDependecies();
 
       const controller = makeController();
       controller.cancel();
@@ -54,6 +45,29 @@ describe('Create', () => {
     });
 
     it('.create() - should call dependecnies.', () => {
+      UserService.createUser = () => {};
+      const UserServiceMock = sinon.mock(UserService);
+      const userServiceDeferred = makeDeferred();
+      UserServiceMock.expects('createUser').once().returns(userServiceDeferred.promise);
+      userServiceDeferred.resolve();
+
+      const $translateDeferred = makeDeferred();
+      $translate = sinon.stub().returns($translateDeferred.promise);
+      $translateDeferred.resolve();
+
+      $state.reload = sinon.spy();
+      $mdDialog.cancel = sinon.spy();
+      ToastService.show = sinon.spy();
+
+      const controller = makeController();
+      controller.create();
+      $rootScope.$digest();
+
+      UserServiceMock.verify();
+      chai.expect($translate.called).to.eq(true);
+      chai.expect($state.reload.called).to.eq(true);
+      chai.expect($mdDialog.cancel.called).to.eq(true);
+      chai.expect(ToastService.show.called).to.eq(true);
     });
   });
 
