@@ -31,7 +31,7 @@ $ npm install
 
 Rename `db.json.example` to `db.json` and start the JSON API server:
 ```sh
-$ mv db.json.example db.json
+$ cp db.json.example db.json
 $ npm run api-server
 ```
 
@@ -62,6 +62,12 @@ Open `http://localhost:3000` in your browser.
 
 ```sh
 $ npm test
+```
+
+### Lint
+
+```sh
+$ npm run lint
 ```
 
 ### Scaffold
