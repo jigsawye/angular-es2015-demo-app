@@ -1,8 +1,8 @@
 class EditController {
   /** @ngInject */
-  constructor($mdDialog, $state, UserService, ToastService, userId) {
+  constructor($mdDialog, $state, $translate, UserService, ToastService, userId) {
     Object.assign(this, {
-      $mdDialog, $state, UserService, ToastService
+      $mdDialog, $state, $translate, UserService, ToastService
     });
 
     UserService.getUserById(userId).then(user => this.user = user);
