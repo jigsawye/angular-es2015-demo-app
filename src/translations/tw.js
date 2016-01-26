@@ -11,7 +11,7 @@ const tw = {
     DELETE_SUCCESS: '刪除成功！',
   },
   HOME: {
-    TITLE: '首頁。',
+    TITLE: '首頁',
   },
   USER: {
     NAME: '姓名',
@@ -31,7 +31,7 @@ const tw = {
     INFO: '資訊',
   },
   ABOUT: {
-    TITLE: '關於。',
+    TITLE: '關於',
   },
 };
 

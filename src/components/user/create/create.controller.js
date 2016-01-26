@@ -12,9 +12,7 @@ class CreateController {
 
   create() {
     this.UserService.createUser(this.user)
-      .then(() => {
-        return this.$translate('TOAST.CREATE_SUCCESS');
-      })
+      .then(() => this.$translate('TOAST.CREATE_SUCCESS'))
       .then(successMessage => {
         this.$state.reload();
         this.$mdDialog.cancel();

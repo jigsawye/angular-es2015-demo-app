@@ -38,22 +38,20 @@ class UserListController {
   }
 
   delete($event, user) {
-    this.$translate(['USER.CONFIRM_DELETE', 'USER.USER_NAME', 'USER.YES', 'USER.NO', 'TOAST.DELETE_SUCCESS'])
-      .then(translations => {
-        this.$mdDialog.show(this.$mdDialog.confirm()
-          .title(translations['USER.CONFIRM_DELETE'])
-          .textContent(`${translations['USER.USER_NAME']}: ${user.name}`)
-          .ariaLabel('confirm remove user')
-          .targetEvent($event)
-          .ok(translations['USER.YES'])
-          .cancel(translations['USER.NO'])
-        ).then(() => {
-          this.UserService.deleteUser(user.id)
-            .then(() => {
-              this.$state.reload();
-              this.ToastService.show(translations['TOAST.DELETE_SUCCESS']);
-            });
-        });
+    this.$translate(['USER.CONFIRM_DELETE', 'USER.USER_NAME', 'USER.YES', 'USER.NO'])
+      .then(translations => this.$mdDialog.show(this.$mdDialog.confirm()
+        .title(translations['USER.CONFIRM_DELETE'])
+        .textContent(`${translations['USER.USER_NAME']}: ${user.name}`)
+        .ariaLabel('confirm remove user')
+        .targetEvent($event)
+        .ok(translations['USER.YES'])
+        .cancel(translations['USER.NO'])
+      ))
+      .then(() => this.UserService.deleteUser(user.id))
+      .then(() => this.$translate('TOAST.DELETE_SUCCESS'))
+      .then(successMessage => {
+        this.$state.reload();
+        this.ToastService.show(successMessage);
       });
   }
 }

@@ -11,7 +11,7 @@ const en = {
     DELETE_SUCCESS: 'Delete Success!',
   },
   HOME: {
-    TITLE: 'Home page.',
+    TITLE: 'Home page',
   },
   USER: {
     NAME: 'Name',
@@ -31,7 +31,7 @@ const en = {
     INFO: 'Info',
   },
   ABOUT: {
-    TITLE: 'About page.',
+    TITLE: 'About page',
   },
 };
 

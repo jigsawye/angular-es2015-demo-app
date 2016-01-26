@@ -1,6 +1,6 @@
 class AboutController {
   constructor() {
-    this.title = 'About page.';
+    //
   }
 }
 

@@ -13,14 +13,13 @@ class EditController {
   }
 
   edit() {
-    this.UserService.updateUser(this.user).then(() => {
-      this.$translate('TOAST.EDIT_SUCCESS')
-        .then(successMessage => {
-          this.$state.reload();
-          this.$mdDialog.cancel();
-          this.ToastService.show(successMessage);
-        });
-    });
+    this.UserService.updateUser(this.user)
+      .then(() => this.$translate('TOAST.EDIT_SUCCESS'))
+      .then(successMessage => {
+        this.$state.reload();
+        this.$mdDialog.cancel();
+        this.ToastService.show(successMessage);
+      });
   }
 }
 
