@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 import translate from 'angular-translate';
 import 'angular-material/angular-material.css';
+import 'material-design-icons/iconfont/material-icons.css';
 
 import Components from './components/';
 import Utils from './utils';

@@ -5,9 +5,8 @@
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="{{ 'USER.LIST' | translate }}">
         <md-content class="md-padding">
-          <md-button class="md-raised md-primary"
-            ng-click="list.create($event)"
-          >
+          <md-button class="md-raised md-primary" ng-click="list.create($event)">
+            <md-icon aria-label="add">add</md-icon>
             {{ 'USER.CREATE' | translate }}
           </md-button>
           <md-list>
@@ -17,8 +16,14 @@
                 <h4>{{ 'USER.PHONE' | translate }}: {{ user.phone }}</h4>
                 <p>{{ 'USER.ADDRESS' | translate }}: {{ user.address }}</p>
               </div>
-              <md-button ng-click="list.edit($event, user.id)">{{ 'USER.EDIT' | translate }}</md-button>
-              <md-button class="md-warn" ng-click="list.delete($event, user)">{{ 'USER.REMOVE' | translate }}</md-button>
+              <md-button ng-click="list.edit($event, user.id)">
+                <md-icon aria-label="create">create</md-icon>
+                {{ 'USER.EDIT' | translate }}
+              </md-button>
+              <md-button class="md-warn" ng-click="list.delete($event, user)">
+                <md-icon aria-label="delete">delete</md-icon>
+                {{ 'USER.REMOVE' | translate }}
+              </md-button>
             </md-list-item>
             </md-list>
         </md-content>

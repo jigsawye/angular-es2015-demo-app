@@ -41,6 +41,14 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw',
       },
+      {
+        test: /\.(ttf|eot|eot|woff(2)?)$/,
+        loader: 'file',
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'url?limit=10000',
+      },
     ]
   },
   postcss: () => [autoprefixer, precss],
