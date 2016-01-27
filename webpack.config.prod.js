@@ -30,12 +30,12 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'ng-annotate!babel',
+        loaders: ['ng-annotate', 'babel'],
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        loader: 'style!css!postcss',
+        loaders: ['style', 'css', 'postcss'],
       },
       {
         test: /\.html$/,
