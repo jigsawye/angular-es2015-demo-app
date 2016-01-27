@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 /* eslint no-unused-vars:0 */
-/* global inject, expect */
+/* global inject, chai, sinon */
 
 import <%= upCaseName %>Module from './<%= name %>';
 import <%= upCaseName %>Controller from './<%= name %>.controller';
