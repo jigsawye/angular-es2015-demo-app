@@ -42,7 +42,7 @@ module.exports = {
         loader: 'raw',
       },
       {
-        test: /\.(ttf|eot|eot|woff(2)?)$/,
+        test: /\.(ttf|eot|woff(2)?)$/,
         loader: 'file',
       },
       {
