@@ -53,7 +53,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg)$/,
-        loader: 'url?limit=10000',
+        loader: 'url',
+        query: {
+          limit: 10000,
+        }
       },
     ]
   },
