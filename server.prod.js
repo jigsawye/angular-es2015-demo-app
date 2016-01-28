@@ -6,6 +6,8 @@ var port = process.env.PORT || 3000;
 
 app.use('/static', express.static(__dirname + '/dist'));
 
+app.use(express.static(__dirname + '/dist'));
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
