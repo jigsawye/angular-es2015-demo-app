@@ -3,6 +3,8 @@ import uiRouter from 'angular-ui-router';
 import AboutController from './about.controller';
 import AboutTemplate from './about.html';
 
+import './about.css';
+
 /** @ngInject */
 const route = $stateProvider => {
   $stateProvider.state('about', {

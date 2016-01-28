@@ -45,11 +45,7 @@ module.exports = {
         loader: 'raw',
       },
       {
-        test: /\.(ttf|eot|woff(2)?)$/,
-        loader: 'file',
-      },
-      {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpg|gif|svg|ttf|eot|woff(2)?)\??.*$/,
         loader: 'url',
         query: {
           limit: 10000,

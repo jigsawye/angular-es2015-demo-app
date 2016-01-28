@@ -41,6 +41,7 @@
     "angular-material": "^1.0.1",
     "angular-translate": "^2.8.1",
     "angular-ui-router": "^0.2.15",
+    "font-awesome": "^4.5.0",
     "lodash": "^3.8.0",
     "material-design-icons": "^2.1.3"
   },
