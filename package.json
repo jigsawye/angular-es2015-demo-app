@@ -27,7 +27,7 @@
   },
   "author": "Evan Ye <jigsaw.ye@gmail.com> (http://github.com/jigsawye)",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=4.2.0"
   },
   "license": "MIT",
   "bugs": {

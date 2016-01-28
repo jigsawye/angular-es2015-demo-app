@@ -20,7 +20,7 @@
 
 ### Requirement
 
-`Node >= 4.0.0`
+`Node >= 4.2.0`
 
 ### Usage
 
