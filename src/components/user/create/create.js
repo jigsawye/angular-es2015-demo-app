@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 import UserCreateController from './create.controller';
 
 const UserCreateModule = angular
-  .module('create', [
+  .module('user.create', [
     uiRouter,
   ])
   .controller('UserCreateController', UserCreateController);
