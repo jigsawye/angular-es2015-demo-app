@@ -13,11 +13,14 @@
     <md-button class="md-primary header-button" ui-sref="about">
         {{ 'HEADER.ABOUT' | translate }}
     </md-button>
-    <md-select aria-label="language" class="md-body-1"
+    <md-select
+      aria-label="language"
+      class="md-body-1"
       ng-model="header.selectedLanguage"
-      ng-change="header.changeLanguage()"
-    >
-       <md-option ng-value="language.key" ng-repeat="language in header.languages">{{ language.name }}</md-option>
+      ng-change="header.changeLanguage()">
+      <md-option ng-value="language.key" ng-repeat="language in header.languages">
+        {{ language.name }}
+      </md-option>
     </md-select>
   </div>
 </md-toolbar>
