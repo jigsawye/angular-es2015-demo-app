@@ -6,8 +6,8 @@ module.exports = (config) => {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: [
-      'Chrome',
-      // 'PhantomJS',
+      // 'Chrome',
+      'PhantomJS',
     ],
 
     // web server port
@@ -25,6 +25,7 @@ module.exports = (config) => {
 
     // list of files/patterns to load in the browser
     files: [
+      'node_modules/babel-polyfill/browser.js',
       'karma.spec.js',
     ],
 

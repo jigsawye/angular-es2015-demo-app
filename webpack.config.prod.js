@@ -4,7 +4,10 @@ var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 
 module.exports = {
-  entry: './src',
+  entry: [
+    'babel-polyfill',
+    './src',
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
