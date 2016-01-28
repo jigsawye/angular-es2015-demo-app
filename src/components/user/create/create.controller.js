@@ -1,8 +1,8 @@
 class CreateController {
   /** @ngInject */
-  constructor($mdDialog, $state, $translate, UserService, ToastService) {
+  constructor($mdDialog, $translate, UserService, ToastService) {
     Object.assign(this, {
-      $mdDialog, $state, $translate, UserService, ToastService
+      $mdDialog, $translate, UserService, ToastService
     });
   }
 
@@ -14,7 +14,6 @@ class CreateController {
     this.UserService.createUser(this.user)
       .then(() => this.$translate('TOAST.CREATE_SUCCESS'))
       .then(successMessage => {
-        this.$state.reload();
         this.$mdDialog.cancel();
         this.ToastService.show(successMessage);
       });

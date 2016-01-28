@@ -1,8 +1,8 @@
 class EditController {
   /** @ngInject */
-  constructor($mdDialog, $state, $translate, UserService, ToastService, userId) {
+  constructor($mdDialog, $translate, UserService, ToastService, userId) {
     Object.assign(this, {
-      $mdDialog, $state, $translate, UserService, ToastService
+      $mdDialog, $translate, UserService, ToastService
     });
 
     UserService.getUserById(userId).then(user => this.user = user);
@@ -16,7 +16,6 @@ class EditController {
     this.UserService.updateUser(this.user)
       .then(() => this.$translate('TOAST.EDIT_SUCCESS'))
       .then(successMessage => {
-        this.$state.reload();
         this.$mdDialog.cancel();
         this.ToastService.show(successMessage);
       });

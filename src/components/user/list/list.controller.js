@@ -4,12 +4,18 @@ import UserCreateTemplate from '../create/create.html';
 
 class UserListController {
   /** @ngInject */
-  constructor($mdDialog, $state, $translate, UserService, ToastService) {
+  constructor($scope, $mdDialog, $translate, UserService, ToastService) {
     Object.assign(this, {
-      $mdDialog, $state, $translate, UserService, ToastService
+      $mdDialog, $translate, UserService, ToastService
     });
 
-    UserService.getUsers().then(users => this.users = users);
+    this.users = UserService.users;
+    $scope.$watch(
+      () => UserService.users,
+      (newVal) => this.users = newVal
+    );
+
+    UserService.getUsers();
   }
 
   edit($event, userId) {
@@ -50,7 +56,6 @@ class UserListController {
       .then(() => this.UserService.deleteUser(user.id))
       .then(() => this.$translate('TOAST.DELETE_SUCCESS'))
       .then(successMessage => {
-        this.$state.reload();
         this.ToastService.show(successMessage);
       });
   }
