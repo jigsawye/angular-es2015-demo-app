@@ -10,10 +10,7 @@ class UserSerivce {
   getUsers() {
     return this.$http
       .get(`${this.API_URL}/users`)
-      .then(res => {
-        this.users = res.data;
-        return res.data;
-      });
+      .then(res => this.users = res.data);
   }
 
   getUserById(id) {
