@@ -61,7 +61,6 @@
     "css-loader": "^0.23.1",
     "eslint": "^1.6.0",
     "eslint-config-airbnb": "^3.0.0",
-    "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "file-loader": "^0.8.5",
     "fs-walk": "0.0.1",
