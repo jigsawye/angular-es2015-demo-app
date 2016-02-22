@@ -1,9 +1,8 @@
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  devtool: 'eval',
   entry: [
     'babel-polyfill',
     './src',
@@ -16,18 +15,18 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
+        NODE_ENV: JSON.stringify('production'),
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         screw_ie8: true,
-        warnings: false
-      }
+        warnings: false,
+      },
     }),
   ],
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
   },
   module: {
     loaders: [
@@ -48,10 +47,15 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff(2)?)\??.*$/,
         loader: 'url',
         query: {
-          limit: 10000,
-        }
+          limit: 100000,
+        },
       },
-    ]
+    ],
   },
-  postcss: () => [autoprefixer, precss],
+  postcss: () => [
+    require('postcss-import'),
+    require('postcss-url'),
+    require('autoprefixer'),
+    require('precss'),
+  ],
 };

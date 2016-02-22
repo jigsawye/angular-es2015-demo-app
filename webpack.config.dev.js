@@ -1,36 +1,34 @@
-var path = require('path');
-var webpack = require('webpack');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-var autoprefixer = require('autoprefixer');
-var precss = require('precss');
+const path = require('path');
+const webpack = require('webpack');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
     'babel-polyfill',
-    './src'
+    './src',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development')
-      }
+        NODE_ENV: JSON.stringify('development'),
+      },
     }),
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3001,
-      proxy: 'http://localhost:3000/'
-    })
+      proxy: 'http://localhost:3000/',
+    }),
   ],
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
   },
   module: {
     loaders: [
@@ -51,10 +49,15 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff(2)?)\??.*$/,
         loader: 'url',
         query: {
-          limit: 10000,
-        }
+          limit: 100000,
+        },
       },
-    ]
+    ],
   },
-  postcss: () => [autoprefixer, precss],
+  postcss: () => [
+    require('postcss-import'),
+    require('postcss-url'),
+    require('autoprefixer'),
+    require('precss'),
+  ],
 };
