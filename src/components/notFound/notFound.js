@@ -10,15 +10,13 @@ const route = $stateProvider => {
     parent: 'root',
     template: NotFoundTemplate,
     controller: 'NotFoundController',
-    controllerAs: 'notFound'
+    controllerAs: 'notFound',
   });
 };
 
-const NotFoundModule = angular
+export default angular
   .module('notFound', [
     uiRouter,
   ])
   .controller('NotFoundController', NotFoundController)
   .config(route);
-
-export default NotFoundModule;

@@ -1,4 +1,4 @@
-const en = {
+export default {
   HEADER: {
     APPNAME: 'DemoApp',
     HOME: 'Home',
@@ -34,5 +34,3 @@ const en = {
     TITLE: 'About page',
   },
 };
-
-export default en;

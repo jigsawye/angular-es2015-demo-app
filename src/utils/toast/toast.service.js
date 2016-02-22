@@ -1,4 +1,4 @@
-class ToastService {
+export default class ToastService {
   /** @ngInject */
   constructor($mdToast) {
     Object.assign(this, {
@@ -19,5 +19,3 @@ class ToastService {
     this.$mdToast.hide();
   }
 }
-
-export default ToastService;

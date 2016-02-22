@@ -1,8 +1,8 @@
-class CreateController {
+export default class CreateController {
   /** @ngInject */
   constructor($mdDialog, $translate, UserService, ToastService) {
     Object.assign(this, {
-      $mdDialog, $translate, UserService, ToastService
+      $mdDialog, $translate, UserService, ToastService,
     });
   }
 
@@ -19,5 +19,3 @@ class CreateController {
       });
   }
 }
-
-export default CreateController;

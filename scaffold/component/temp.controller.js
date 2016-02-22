@@ -1,8 +1,6 @@
-class <%= upCaseName %>Controller {
+export default class <%= upCaseName %>Controller {
   /** @ngInject */
   constructor() {
     this.name = '<%= name %>';
   }
 }
-
-export default <%= upCaseName %>Controller;

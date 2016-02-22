@@ -1,8 +1,6 @@
 import angular from 'angular';
 import ToastService from './toast.service';
 
-const ToastModule = angular
+export default angular
   .module('toast', [])
   .service('ToastService', ToastService);
-
-export default ToastModule;

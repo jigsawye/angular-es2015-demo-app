@@ -1,4 +1,4 @@
-const tw = {
+export default {
   HEADER: {
     APPNAME: '範例應用程式',
     HOME: '首頁',
@@ -34,5 +34,3 @@ const tw = {
     TITLE: '關於',
   },
 };
-
-export default tw;

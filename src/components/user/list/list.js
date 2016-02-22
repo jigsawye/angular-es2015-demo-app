@@ -10,15 +10,13 @@ const route = $stateProvider => {
     parent: 'user',
     template: UserListTemplate,
     controller: 'UserListController',
-    controllerAs: 'list'
+    controllerAs: 'list',
   });
 };
 
-const UserListModule = angular
+export default angular
   .module('user.list', [
     uiRouter,
   ])
   .controller('UserListController', UserListController)
   .config(route);
-
-export default UserListModule;

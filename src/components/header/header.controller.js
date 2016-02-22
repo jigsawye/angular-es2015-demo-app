@@ -1,8 +1,8 @@
-class HeaderController {
+export default class HeaderController {
   /** @ngInject */
   constructor($translate) {
     Object.assign(this, {
-      $translate
+      $translate,
     });
 
     this.languages = [
@@ -16,5 +16,3 @@ class HeaderController {
     this.$translate.use(this.selectedLanguage);
   }
 }
-
-export default HeaderController;

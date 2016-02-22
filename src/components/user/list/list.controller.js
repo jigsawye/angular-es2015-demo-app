@@ -2,17 +2,17 @@ import angular from 'angular';
 import UserEditTemplate from '../edit/edit.html';
 import UserCreateTemplate from '../create/create.html';
 
-class UserListController {
+export default class UserListController {
   /** @ngInject */
   constructor($scope, $mdDialog, $translate, UserService, ToastService) {
     Object.assign(this, {
-      $mdDialog, $translate, UserService, ToastService
+      $mdDialog, $translate, UserService, ToastService,
     });
 
     this.users = UserService.users;
     $scope.$watch(
       () => UserService.users,
-      (newVal) => this.users = newVal
+      newVal => (this.users = newVal)
     );
 
     UserService.getUsers();
@@ -24,7 +24,7 @@ class UserListController {
       controllerAs: 'edit',
       template: UserEditTemplate,
       locals: {
-        userId
+        userId,
       },
       parent: angular.element(document.body),
       targetEvent: $event,
@@ -60,5 +60,3 @@ class UserListController {
       });
   }
 }
-
-export default UserListController;

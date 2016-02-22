@@ -16,15 +16,13 @@ const route = $stateProvider => {
         template: HeaderTemplate,
         controller: 'HeaderController',
         controllerAs: 'header',
-      }
-    }
+      },
+    },
   });
 };
 
-const layoutModule = angular
+export default angular
   .module('layout', [
     uiRouter,
   ])
   .config(route);
-
-export default layoutModule;

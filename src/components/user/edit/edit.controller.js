@@ -1,11 +1,11 @@
-class EditController {
+export default class EditController {
   /** @ngInject */
   constructor($mdDialog, $translate, UserService, ToastService, userId) {
     Object.assign(this, {
-      $mdDialog, $translate, UserService, ToastService
+      $mdDialog, $translate, UserService, ToastService,
     });
 
-    UserService.getUserById(userId).then(user => this.user = user);
+    UserService.getUserById(userId).then(user => (this.user = user));
   }
 
   cancel() {
@@ -21,5 +21,3 @@ class EditController {
       });
   }
 }
-
-export default EditController;

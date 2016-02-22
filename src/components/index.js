@@ -6,13 +6,12 @@ import About from './about/about';
 import Home from './home/home';
 import User from './user/user';
 
-const ComponentModule = angular.module('app.components', [
-  Layout.name,
-  Header.name,
-  notFound.name,
-  Home.name,
-  User.name,
-  About.name,
-]);
-
-export default ComponentModule;
+export default angular
+  .module('app.components', [
+    Layout.name,
+    Header.name,
+    notFound.name,
+    Home.name,
+    User.name,
+    About.name,
+  ]);

@@ -8,13 +8,12 @@ import Components from './components/';
 import Utils from './utils';
 import Config from './config';
 
-angular
-  .module('app', [
-    uiRouter,
-    ngMaterial,
-    translate,
+angular.module('app', [
+  uiRouter,
+  ngMaterial,
+  translate,
 
-    Config.name,
-    Components.name,
-    Utils.name,
-  ]);
+  Config.name,
+  Components.name,
+  Utils.name,
+]);

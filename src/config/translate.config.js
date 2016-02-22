@@ -1,13 +1,14 @@
-import * as translations from '../translations';
+import {
+  en,
+  tw,
+} from '../translations';
 
 /** @ngInject */
-function config($translateProvider) {
+export default $translateProvider => {
   $translateProvider
     .useSanitizeValueStrategy('escape')
-    .translations('en', translations.en)
-    .translations('tw', translations.tw)
+    .translations('en', en)
+    .translations('tw', tw)
     .preferredLanguage('en')
     .fallbackLanguage('en');
-}
-
-export default config;
+};

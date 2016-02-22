@@ -16,17 +16,16 @@ const route = $stateProvider => {
   });
 };
 <% } if (route) { %>
-const <%= upCaseName %>Module = angular
+export default angular
   .module('<%= name %>', [
     uiRouter,
   ])
   .controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller)
   .config(route);
 <% } else { %>
-const <%= upCaseName %>Module = angular
+export default angular
   .module('<%= name %>', [
     uiRouter,
   ])
   .controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller);
 <% } %>
-export default <%= upCaseName %>Module;

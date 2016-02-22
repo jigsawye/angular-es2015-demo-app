@@ -17,11 +17,11 @@ const route = $stateProvider => {
     abstract: true,
     template: UserTemplate,
     controller: 'UserController',
-    controllerAs: 'user'
+    controllerAs: 'user',
   });
 };
 
-const userModule = angular
+export default angular
   .module('user', [
     uiRouter,
     UserList.name,
@@ -31,5 +31,3 @@ const userModule = angular
   .controller('UserController', UserController)
   .service('UserService', UserService)
   .config(route);
-
-export default userModule;
