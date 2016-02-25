@@ -1,4 +1,4 @@
-import angular from 'angular';
+import { module } from 'angular';
 import uiRouter from 'angular-ui-router';
 import HomeTemplate from './home.html';
 
@@ -12,8 +12,9 @@ const route = $stateProvider => {
   });
 };
 
-export default angular
-  .module('home', [
-    uiRouter,
-  ])
-  .config(route);
+const Home = module('home', [
+  uiRouter,
+])
+.config(route);
+
+export default Home.name;

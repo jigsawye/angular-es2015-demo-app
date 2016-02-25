@@ -1,4 +1,4 @@
-import angular from 'angular';
+import { module } from 'angular';
 import uiRouter from 'angular-ui-router';
 import NotFoundController from './notFound.controller';
 import NotFoundTemplate from './notFound.html';
@@ -14,9 +14,10 @@ const route = $stateProvider => {
   });
 };
 
-export default angular
-  .module('notFound', [
-    uiRouter,
-  ])
-  .controller('NotFoundController', NotFoundController)
-  .config(route);
+const NotFound = module('notFound', [
+  uiRouter,
+])
+.controller('NotFoundController', NotFoundController)
+.config(route);
+
+export default NotFound.name;

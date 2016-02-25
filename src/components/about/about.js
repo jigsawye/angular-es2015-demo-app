@@ -1,4 +1,4 @@
-import angular from 'angular';
+import { module } from 'angular';
 import uiRouter from 'angular-ui-router';
 import AboutTemplate from './about.html';
 
@@ -14,8 +14,9 @@ const route = $stateProvider => {
   });
 };
 
-export default angular
-  .module('about', [
-    uiRouter,
-  ])
-  .config(route);
+const About = module('about', [
+  uiRouter,
+])
+.config(route);
+
+export default About.name;

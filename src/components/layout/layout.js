@@ -1,4 +1,4 @@
-import angular from 'angular';
+import { module } from 'angular';
 import uiRouter from 'angular-ui-router';
 import LayoutTemplate from './layout.html';
 import HeaderTemplate from '../header/header.html';
@@ -21,8 +21,9 @@ const route = $stateProvider => {
   });
 };
 
-export default angular
-  .module('layout', [
-    uiRouter,
-  ])
-  .config(route);
+const Layout = module('layout', [
+  uiRouter,
+])
+.config(route);
+
+export default Layout.name;

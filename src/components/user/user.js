@@ -1,4 +1,4 @@
-import angular from 'angular';
+import { module } from 'angular';
 import uiRouter from 'angular-ui-router';
 import UserController from './user.controller';
 import UserService from './user.service';
@@ -21,13 +21,15 @@ const route = $stateProvider => {
   });
 };
 
-export default angular
-  .module('user', [
-    uiRouter,
-    UserList.name,
-    UserEdit.name,
-    UserCreate.name,
-  ])
-  .controller('UserController', UserController)
-  .service('UserService', UserService)
-  .config(route);
+const User = module('user', [
+  uiRouter,
+
+  UserList,
+  UserEdit,
+  UserCreate,
+])
+.controller('UserController', UserController)
+.service('UserService', UserService)
+.config(route);
+
+export default User.name;

@@ -1,7 +1,8 @@
-import angular from 'angular';
+import { module } from 'angular';
 import Toast from './toast/toast';
 
-export default angular
-  .module('app.utils', [
-    Toast.name,
-  ]);
+const Utils = module('app.utils', [
+  Toast,
+]);
+
+export default Utils.name;

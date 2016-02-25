@@ -1,4 +1,4 @@
-import angular from 'angular';
+import { module } from 'angular';
 import uiRouter from 'angular-ui-router';
 import UserListController from './list.controller';
 import UserListTemplate from './list.html';
@@ -14,9 +14,10 @@ const route = $stateProvider => {
   });
 };
 
-export default angular
-  .module('user.list', [
-    uiRouter,
-  ])
-  .controller('UserListController', UserListController)
-  .config(route);
+const UserList = module('user.list', [
+  uiRouter,
+])
+.controller('UserListController', UserListController)
+.config(route);
+
+export default UserList.name;
