@@ -1,5 +1,5 @@
 import { module } from 'angular';
-import uiRouter from 'angular-ui-router';
+import router from 'angular-ui-router';
 import AboutTemplate from './about.html';
 
 import './about.css';
@@ -15,7 +15,7 @@ const route = $stateProvider => {
 };
 
 const About = module('about', [
-  uiRouter,
+  router,
 ])
 .config(route);
 

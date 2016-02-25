@@ -1,5 +1,5 @@
 import { module } from 'angular';
-import uiRouter from 'angular-ui-router';
+import router from 'angular-ui-router';
 import HomeTemplate from './home.html';
 
 /** @ngInject */
@@ -13,7 +13,7 @@ const route = $stateProvider => {
 };
 
 const Home = module('home', [
-  uiRouter,
+  router,
 ])
 .config(route);
 

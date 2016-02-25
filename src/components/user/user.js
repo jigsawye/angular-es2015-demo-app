@@ -1,5 +1,5 @@
 import { module } from 'angular';
-import uiRouter from 'angular-ui-router';
+import router from 'angular-ui-router';
 import UserController from './user.controller';
 import UserService from './user.service';
 import UserTemplate from './user.html';
@@ -22,7 +22,7 @@ const route = $stateProvider => {
 };
 
 const User = module('user', [
-  uiRouter,
+  router,
 
   UserList,
   UserEdit,

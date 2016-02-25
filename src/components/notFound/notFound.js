@@ -1,5 +1,5 @@
 import { module } from 'angular';
-import uiRouter from 'angular-ui-router';
+import router from 'angular-ui-router';
 import NotFoundController from './notFound.controller';
 import NotFoundTemplate from './notFound.html';
 
@@ -15,7 +15,7 @@ const route = $stateProvider => {
 };
 
 const NotFound = module('notFound', [
-  uiRouter,
+  router,
 ])
 .controller('NotFoundController', NotFoundController)
 .config(route);

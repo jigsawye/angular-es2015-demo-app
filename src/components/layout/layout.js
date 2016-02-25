@@ -1,5 +1,5 @@
 import { module } from 'angular';
-import uiRouter from 'angular-ui-router';
+import router from 'angular-ui-router';
 import LayoutTemplate from './layout.html';
 import HeaderTemplate from '../header/header.html';
 
@@ -22,7 +22,7 @@ const route = $stateProvider => {
 };
 
 const Layout = module('layout', [
-  uiRouter,
+  router,
 ])
 .config(route);
 

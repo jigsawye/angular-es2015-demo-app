@@ -1,5 +1,5 @@
 import { module } from 'angular';
-import uiRouter from 'angular-ui-router';
+import router from 'angular-ui-router';
 import UserListController from './list.controller';
 import UserListTemplate from './list.html';
 
@@ -15,7 +15,7 @@ const route = $stateProvider => {
 };
 
 const UserList = module('user.list', [
-  uiRouter,
+  router,
 ])
 .controller('UserListController', UserListController)
 .config(route);
