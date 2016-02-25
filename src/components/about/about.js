@@ -10,7 +10,6 @@ const route = $stateProvider => {
     url: '/about',
     parent: 'root',
     template: AboutTemplate,
-    controllerAs: 'about',
   });
 };
 

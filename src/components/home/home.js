@@ -8,7 +8,6 @@ const route = $stateProvider => {
     url: '/',
     parent: 'root',
     template: HomeTemplate,
-    controllerAs: 'home',
   });
 };
 
